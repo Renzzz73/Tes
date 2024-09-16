@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Password</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+    background-color: black;
+    background-image: url('https://feeldreams.github.io/pics/awan4.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    filter: brightness(0.7); /* Mengurangi fokus pada gambar latar */
+}
+
+.container {
+    text-align: center;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4); /* Latar belakang semi-transparan untuk container */
+    backdrop-filter: blur(5px); /* Menambahkan blur untuk efek lebih fokus */
+}
+
+input[type="password"], input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.9); /* Opacity dikurangi menjadi 0.8 */
+    color: black;
+}
+.password-container {
+    position: relative;
+    display: inline-block;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: black;
+    font-size: 20px; /* Sesuaikan ukuran icon */
+}
+
+button {
+    margin: 10px 0 0 0;
+    padding: 10px 20px;
+    border: 1px solid #2033c3;
+    border-radius: 4px;
+    background-color: #2a43ff; /* Ganti warna tombol menjadi biru tua */
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0059b3; /* Biru tua sedikit lebih terang saat hover */
+}
+
+        .message {
+            color: #ff2a35;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Masukkan Password</h2>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Password">
+            <span class="material-icons toggle-password" onclick="togglePasswordVisibility()">visibility_off</span>
+        </div>
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+        <p id="message" class="message"></p>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.textContent = 'visibility'; // Ganti icon saat password terlihat
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.textContent = 'visibility_off'; // Ganti icon saat password tersembunyi
+            }
+        }
+
+        function checkPassword() {
+            const correctPassword = 'kamucantikk123'; // Password yang benar
+            const passwordInput = document.getElementById('password').value;
+            const messageElement = document.getElementById('message');
+
+            if (passwordInput === correctPassword) {
+                window.location.href = 'file:///storage/emulated/0/fixx/Ultah.html'; // Ganti dengan halaman tujuan
+            } else {
+                messageElement.textContent = 'Password salah, silahkan coba lagi';
+            }
+        }
+    </script>
+</body>
+</html>
